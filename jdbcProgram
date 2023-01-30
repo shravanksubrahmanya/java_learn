@@ -1,0 +1,25 @@
+package simpleJavaDB;
+
+import java.sql.*;
+public class Simple {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+	         
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://database-2.cravszdlpcvv.ap-south-1.rds.amazonaws.com", "admin", "123456789");
+			Statement mystatement = con.createStatement();
+			ResultSet codespeedy=mystatement.executeQuery("select * from db_one.student");
+			while(codespeedy.next())
+			{
+				System.out.println(codespeedy.getString("sid")+"  "+codespeedy.getString("name") + " "+ codespeedy.getString("marks"));  
+	      
+			}
+	  
+	     	}   
+	    catch (Exception e){
+	    	System.out.println(e);
+	    }
+	}
+}
