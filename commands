@@ -1,0 +1,148 @@
+
+Conversation opened. 1 unread message.
+
+Skip to content
+Using Gmail with screen readers
+1 of 141
+Fwd: cloud document + EMR (mapper,reducer,input) + eclips requirements
+Inbox
+
+swetha y <swethayprahallad@gmail.com>
+Attachments
+10:41 AM (0 minutes ago)
+to me
+
+
+---------- Forwarded message ---------
+From: Neha Mylar R <nehamylar@gmail.com>
+Date: Mon, 27 Feb, 2023, 12:27 am
+Subject: cloud document + EMR (mapper,reducer,input) + eclips requirements
+To: <sahanasahu848@gmail.com>, <swethayprahallad@gmail.com>, <niranjanchinnu2622000@gmail.com>, <varunkushalappa11@gmail.com>, <deepuprakashaj@gmail.com>, <chethankumaram5627@gmail.com>, Darshu Achar <darshuachar4@gmail.com>
+
+
+
+
+4
+ Attachments
+  •  Scanned by Gmail
+1.Linux
+Commands:
+sudo -i
+yum install httpd
+service httpd start
+yum install php php-mysql
+cd /var/www/html
+vim test.php
+
+PHP program:
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My first PHP page</h1>
+
+<?php
+echo "Hello World!";
+?>
+
+</body>
+</html>
+--------------------------------------------------------------------------------------------------------
+2.Ubuntu
+Commands:
+sudo apt-get dist-upgrade
+sudo apt-get upgrade
+sudo su
+echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+apt-get update
+apt-get install r-base
+R
+after this give program
+---------------------------------------------------------------------------------------------------------
+3.Windows 
+Download Code blocks from Sourceforge.net
+Download Python compiler 
+---------------------------------------------------------------------------------------------------------
+4.RDS 
+Type 1:
+Commands:
+sudo -i
+yum install httpd
+service httpd start
+yum install php php-mysql
+service httpd restart
+cd /var/www/html
+vim test.php
+
+Program:
+<?php
+$servername = "mysql.cf9myoexghhf.ap-south-1.rds.amazonaws.com";
+$username = "admin";
+$password = "ajju1800";
+$dbname = "sys";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT id,name from Stduent";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<br> id: ". $row["id"]. " - Name: ". $row["name"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+
+$conn->close();
+
+?>
+------------------------------------------------------------------------------------------------
+Type 2:
+yum install mysql
+mysql -u master -p -h pasteendpoint -P 3306
+use databasename;
+select * from table;
+-------------------------------------------------------------------------------------------------
+Type 3:Xampp
+xampp control start first two sevices
+keep file in htdocs
+google host: localhost:80/test.php
+------------------------------------------------------------------------------------------------
+5.Eclipse:
+Program:
+import java.sql.*;  
+
+public class JDBClass {
+ 
+public static void main(String args[]){  
+try{  
+Class.forName("com.mysql.cj.jdbc.Driver");  
+String dbName = "RONdb";
+    String userName = "admin";
+    String password = "admin123";
+    String hostname = "rondb.c93fxu82udnu.ap-south-1.rds.amazonaws.com";
+    String port ="3306";
+    String jdbcUrl = "jdbc:mysql://" + hostname + ":" + port + "/" + dbName + "?user=" + userName + "&password=" + password;
+    Connection con = DriverManager.getConnection(jdbcUrl);
+    if (con != null) {
+         System.out.println("Connected to the database test1");
+     }
+Statement stmt=con.createStatement();  
+ResultSet rs=stmt.executeQuery("select * from RONdb.student");  
+while(rs.next())  
+System.out.println(rs.getInt(1)+"  "+rs.getString(2));  
+con.close();  
+}catch(Exception e){ System.out.println(e);}  
+}  
+}
+------------------------------------------------------------------------------------------------------
+commands-cc.txt
+Displaying commands-cc.txt.
