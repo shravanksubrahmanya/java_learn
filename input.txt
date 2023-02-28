@@ -1,0 +1,6 @@
+This is the text file
+Dr Jagannatha Associate Professor, currently working in the Dept of Master of Computer Applicaitons, M S Ramaiah Intitute of Technology, Bangalore-54.
+This file is for demo purpose
+This file contains sample data
+The word count program is like the "Hello World" program in MapReduce.
+
